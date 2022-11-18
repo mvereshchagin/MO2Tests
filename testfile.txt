@@ -1,0 +1,8 @@
+>>> from fibonacci import fibonacci
+
+>>> fibonacci(10)
+55
+>>> fibonacci(11)
+89
+>>> fibonacci(19)
+4181
