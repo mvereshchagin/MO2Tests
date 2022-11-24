@@ -14,6 +14,10 @@ def use_unittest() -> None:
     suite = unittest.TestLoader().loadTestsFromTestCase(PrintGreetingTest)
     unittest.TextTestRunner(verbosity=2).run(suite)
 
+    from print_greeting_unittest import PrintGreetingTestWithMock
+    suite = unittest.TestLoader().loadTestsFromTestCase(PrintGreetingTestWithMock)
+    unittest.TextTestRunner(verbosity=2).run(suite)
+
 def try_greeting() -> None:
     from qa import print_greeting2
     from console_io import RealConsoleIO

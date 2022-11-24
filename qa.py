@@ -20,3 +20,15 @@ def print_greeting2(console: ConsoleIO) -> None:
         console.print('You are too young for myn app')
     else:
         console.print(f'You are welcome')
+
+def print_greeting3(console: ConsoleIO) -> str:
+
+    console.print('What is your name?')
+    name = console.input()
+
+    console.print('What is your age?')
+    age = int(console.input())
+
+    console.print(f'You are {name} with {age} y.o.')
+
+    return name

@@ -2,8 +2,9 @@ import unittest
 import unittest.mock
 from console_io import ConsoleIO
 from typing import List
-from qa import print_greeting2
+from qa import print_greeting2, print_greeting3
 from parameterized import parameterized
+
 
 # stub
 class MemoryConsoleIO(ConsoleIO):
@@ -54,4 +55,19 @@ class PrintGreetingTest(unittest.TestCase):
         # assert
         self.assertEqual(res, expected_result, func_name)
 
+
+class PrintGreetingTestWithMock(unittest.TestCase):
+    def test_print_greeting3_input_Vasya(self):
+        # arrange
+        console = ConsoleIO()
+        console.input = unittest.mock.Mock()
+        console.input.side_effect = ['Vasya', 32]
+        console.print = unittest.mock.Mock()
+        console.print.ar
+
+        # act
+        res_value = print_greeting3(console)
+
+        # assert
+        self.assertEqual(res_value, "Vasya")
 
